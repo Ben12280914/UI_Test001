@@ -370,9 +370,16 @@ function revise(input: ReviseInput): ProposalDraft[] {
   const wantsResult = /성과|결과|실적|수치|kpi/i.test(input.comment) && !/결과보다/.test(input.comment);
   const acts = new Map(input.activities.map((a) => [a.id, a]));
 
+  // The comment's subject: projects it names. Only fall back to keyword matching when none is named.
+  const projectNames = [...new Set(input.items.map((i) => i.projectName).filter((p): p is string => Boolean(p)))];
+  const lowered = input.comment.toLowerCase();
+  const named = projectNames.filter((p) => lowered.includes(p.toLowerCase()));
+  const editableSections = new Set(["key_achievements", "project_progress", "next_actions"]);
   const targets = input.items.filter((i) => {
+    if (!editableSections.has(i.sectionKey)) return false;
+    if (named.length) return Boolean(i.projectName && named.some((p) => sameProject(p, i.projectName!)));
     const hay = `${i.projectName ?? ""} ${i.text}`.toLowerCase();
-    return tokens.some((t) => hay.includes(t.toLowerCase())) && i.sectionKey !== "executive_summary";
+    return tokens.some((t) => hay.includes(t.toLowerCase()));
   });
 
   const proposals: ProposalDraft[] = [];

@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-slate-50 text-slate-800;
+  }
+  h1, h2, h3 {
+    @apply text-navy-900;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,26,46,0.04)];
+  }
+  .card-header {
+    @apply flex items-center justify-between gap-3 border-b border-slate-100 px-5 py-3.5;
+  }
+  .card-title {
+    @apply text-sm font-semibold text-navy-900;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white hover:bg-brand-600;
+  }
+  .btn-navy {
+    @apply btn bg-navy-800 text-white hover:bg-navy-700;
+  }
+  .btn-outline {
+    @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50;
+  }
+  .btn-ghost {
+    @apply btn text-slate-600 hover:bg-slate-100;
+  }
+  .btn-sm {
+    @apply px-2.5 py-1 text-xs;
+  }
+  .input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 focus:border-navy-600 focus:outline-none focus:ring-2 focus:ring-navy-100;
+  }
+  .label {
+    @apply mb-1 block text-xs font-medium text-slate-500;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] font-semibold tracking-wide;
+  }
+  .table {
+    @apply w-full text-left text-sm;
+  }
+  .table th {
+    @apply border-b border-slate-200 bg-slate-50 px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-slate-500;
+  }
+  .table td {
+    @apply border-b border-slate-100 px-4 py-3 align-top;
+  }
+}
+
+@media print {
+  aside, header, .no-print {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+  .slide {
+    break-inside: avoid;
+    page-break-after: always;
+    box-shadow: none !important;
+  }
+}

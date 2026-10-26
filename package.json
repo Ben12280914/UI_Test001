@@ -1,13 +1,12 @@
 {
-  "name": "tkg-ai-reporting-agent",
+  "name": "ezi-ai-reporting-agent",
   "version": "0.1.0",
   "private": true,
-  "description": "TKG AI Reporting Agent — Work → Memory → Report",
+  "description": "이지 · AI Reporting Agent — Work → Memory → Report",
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start -p 3000",
-    "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "samples": "tsx scripts/generate-samples.ts",
     "seed": "tsx scripts/seed.ts",

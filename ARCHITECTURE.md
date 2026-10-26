@@ -1,6 +1,6 @@
 # Architecture
 
-TKG AI Reporting Agent는 **Work → Memory → Report** 흐름을 5개 Layer로 나눠 구현합니다.
+이지(AI Reporting Agent)는 **Work → Memory → Report** 흐름을 5개 Layer로 나눠 구현합니다.
 사내 API가 없는 연동(Power Automate, 메모결재, report.taekwang.com)은 모두 **Adapter Interface + Mock 구현**으로 분리되어 있어,
 실제 API가 생기면 Adapter만 교체하면 됩니다. UI와 Core Logic은 바뀌지 않습니다.
 
