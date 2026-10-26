@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# runtime data (uploaded files, work memory store)
+data/
+
+# secrets
+.env
+.env.local
+.env.*.local
