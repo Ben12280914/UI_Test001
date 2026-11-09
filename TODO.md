@@ -54,3 +54,7 @@
 - [ ] 회사 PPT Template Export (Report Preview 섹션 구조 → .pptx)
 - [ ] 사내 SSO / 사용자별 데이터 분리
 - [ ] Store → 사내 DB (다중 사용자 동시 사용 시)
+
+## 📌 나중에 볼 것
+
+- [ ] Instagram 릴스 내용 Jarvis에서 돌려보기 (집 PC 원격제어 켠 뒤): https://www.instagram.com/reel/DfUHf7ay8JH/
